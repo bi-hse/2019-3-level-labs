@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Яндекс.Новости</title>
+</head>
+<body>
+    <h1>Новости о политике</h1>
+    <ul>
+        {% for article in articles %}
+          <li>{{ article['tittle'] }}</li>
+        {% endfor %}
+    </ul>
+    <p><b>Источник:</b> {{ url }}</p>
+    <p><b>Дата:</b> {{ date }}</p>
+</body>
+</html>
