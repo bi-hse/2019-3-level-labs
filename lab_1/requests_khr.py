@@ -4,39 +4,43 @@ import json
 import datetime
 from flask import Flask
 from flask import render_template
+import unittest
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def get_news():
-    url = "https://yandex.com/news/rubric/politics?from=index"
-    today = str(datetime.date.today())
+class TestStringMethods(unittest.TestCase):
 
-    yandex_politics_request = requests.get(url)
+    def get_news(self):
+        url = "https://yandex.com/news/rubric/politics?from=index"
+        today = str(datetime.date.today())
 
-    if yandex_politics_request.status_code == 200:
-        print('Yay! We performed a successfull request')
-    else:
-        print('Oops! Something went wrong...')
+        yandex_politics_request = requests.get(url)
 
-    parsed_page = BeautifulSoup(yandex_politics_request.text, 'html.parser')
+        if yandex_politics_request.status_code == 200:
+            print('Yay! We performed a successfull request')
+        else:
+            print('Oops! Something went wrong...')
 
-    articles = []
-    for title_tag in parsed_page.find_all('h2'):
-        articles.append({"tittle": title_tag.text})
+        parsed_page = BeautifulSoup(yandex_politics_request.text, 'html.parser')
 
-    json_articles = json.dumps({
-        "url": "https://yandex.com/news/rubric/politics?from=index",
-        "creationDate": today,
-        "articles": articles
-    }, ensure_ascii=False)
+        articles = []
+        for title_tag in parsed_page.find_all('h2'):
+            articles.append({"tittle": title_tag.text})
 
-    with open("articles.json", "w", encoding="utf-8") as file:
-        file.write(json_articles)
+        json_articles = json.dumps({
+            "url": "https://yandex.com/news/rubric/politics?from=index",
+            "creationDate": today,
+            "articles": articles
+        }, ensure_ascii=False)
 
-    return render_template('news_page.html', url=url, date=today, articles=articles)
+        with open("articles.json", "w", encoding="utf-8") as file:
+            file.write(json_articles)
+
+        return render_template('news_page.html', url=url, date=today, articles=articles)
 
 
 if __name__ == '__main__':
     app.run()
+    unittest.main()
