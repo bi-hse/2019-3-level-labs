@@ -6,26 +6,24 @@ from flask import Flask
 from flask import render_template
 
 
-def parse_page(url):
+async def get_html_page(url):
     yandex_politics_request = requests.get(url)
-
-    if yandex_politics_request.status_code == 200:
-        print('Yay! We performed a successfull request')
-    else:
-        print('Oops! Something went wrong...')
 
     return BeautifulSoup(yandex_politics_request.text, 'html.parser')
 
 
-def get_tittles(parsed_page):
+async def find_articles(html_page):
     articles = []
-    for title_tag in parsed_page.find_all('h2'):
+    for title_tag in html_page.find_all('h2'):
         articles.append({"tittle": title_tag.text})
 
     return articles
 
 
-def record_json(url, today, articles):
+async def publish_report(articles):
+    today = str(datetime.date.today())
+    url = "https://yandex.com/news/rubric/politics?from=index"
+
     json_articles = json.dumps({
         "url": url,
         "creationDate": today,
@@ -35,20 +33,19 @@ def record_json(url, today, articles):
     with open("articles.json", "w", encoding="utf-8") as file:
         file.write(json_articles)
 
-
 app = Flask(__name__)
 
 
 @app.route('/')
 def get_news():
-    url = "https://yandex.com/news/rubric/politics?from=index"
     today = str(datetime.date.today())
+    url = "https://yandex.com/news/rubric/politics?from=index"
 
-    page = parse_page(url)
-    tittles = get_tittles(page)
-    record_json(url, today, tittles)
+    html_page = get_html_page(url)
+    articles = find_articles(html_page)
+    publish_report(articles)
 
-    return render_template('news_page.html', url=url, date=today, articles=tittles)
+    return render_template('news_page.html', url=url, date=today, articles=articles)
 
 
 if __name__ == '__main__':
