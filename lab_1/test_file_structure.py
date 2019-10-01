@@ -6,7 +6,8 @@ import unittest
 
 class StructureTests(unittest.TestCase):
     def test_file_structure(self):
-        self.page = news.get_html_page("https://yandex.com/news/rubric/politics?from=index")
+        self.request = news.get_html_page("https://yandex.com/news/rubric/politics?from=index")
+        self.page = news.parse_page(self.request)
         self.tittles = news.find_articles(self.page)
         news.publish_report("test_articles.json",  self.tittles)
 

@@ -7,9 +7,11 @@ from flask import render_template
 
 
 def get_html_page(url):
-    yandex_politics_request = requests.get(url)
+    return requests.get(url)
 
-    return BeautifulSoup(yandex_politics_request.text, 'html.parser')
+
+def parse_page(request):
+    return BeautifulSoup(request.text, 'html.parser')
 
 
 def find_articles(html_page):
