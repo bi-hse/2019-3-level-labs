@@ -20,7 +20,7 @@ def find_articles(html_page):
     return articles
 
 
-def publish_report(articles):
+def publish_report(path, articles):
     today = str(datetime.date.today())
     url = "https://yandex.com/news/rubric/politics?from=index"
 
@@ -30,7 +30,7 @@ def publish_report(articles):
         "articles": articles
     }, ensure_ascii=False)
 
-    with open("articles.json", "w", encoding="utf-8") as file:
+    with open(path, "w", encoding="utf-8") as file:
         file.write(json_articles)
 
 
@@ -44,7 +44,7 @@ def get_news():
 
     html_page = get_html_page(url)
     articles = find_articles(html_page)
-    publish_report(articles)
+    publish_report("articles.json", articles)
 
     return render_template('news_page.html', url=url, date=today, articles=articles)
 

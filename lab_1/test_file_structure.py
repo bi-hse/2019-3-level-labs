@@ -8,9 +8,9 @@ class StructureTests(unittest.TestCase):
     def test_file_structure(self):
         self.page = news.get_html_page("https://yandex.com/news/rubric/politics?from=index")
         self.tittles = news.find_articles(self.page)
-        news.publish_report(self.tittles)
+        news.publish_report("test_articles.json",  self.tittles)
 
-        with open("articles.json", "r", encoding="utf-8") as read_file:
+        with open("test_articles.json", "r", encoding="utf-8") as read_file:
             data = json.load(read_file)
 
         self.assertEqual("https://yandex.com/news/rubric/politics?from=index", data['url'])  # есть url
