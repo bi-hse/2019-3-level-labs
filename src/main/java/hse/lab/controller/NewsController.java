@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NewsController {
 
+    private final String TPROGER_URL = "https://tproger.ru/";
+
     @Autowired
     private NewsParser newsParser;
 
@@ -18,11 +20,11 @@ public class NewsController {
     @GetMapping("/news")
     public void getNews() {
         // List<String> list = newsParser.getNews();
-        former.createPage(newsParser.getNews());
+        former.createPage(newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
     }
 
     @GetMapping("/pageTitle")
     public String getTitle() {
-        return newsParser.getHtmlPage().title();
+        return newsParser.getHtmlPage(TPROGER_URL).title();
     }
 }
