@@ -17,8 +17,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class ControllerTest {
 
-    private final String TEST_URL = "http://localhost:8080/";
-
     @Autowired
     private MockMvc mvc;
 

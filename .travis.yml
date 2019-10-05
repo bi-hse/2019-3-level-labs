@@ -4,3 +4,6 @@ stages:
   - compile
   - test
   - deploy
+before_install:
+  - cd java
+

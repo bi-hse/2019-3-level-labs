@@ -19,7 +19,6 @@ public class NewsController {
 
     @GetMapping("/news")
     public void getNews() {
-        // List<String> list = newsParser.getNews();
         former.createPage(newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
     }
 
