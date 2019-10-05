@@ -1,2 +1,6 @@
 language: java
 script: mvn package -DskipTests
+stages:
+  - compile
+  - test
+  - deploy
