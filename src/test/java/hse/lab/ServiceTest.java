@@ -4,12 +4,16 @@ import com.google.gson.Gson;
 import hse.lab.model.Result;
 import hse.lab.service.NewsParser;
 import org.json.JSONException;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.IOException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -28,5 +32,12 @@ public class ServiceTest {
         Assert.assertNotNull(object);
         Assert.assertEquals(object.getUrl(), TPROGER_URL);
         Assert.assertNotNull(object.getArticles());
+    }
+
+    @Test
+    public void urlTest() throws IOException {
+        Connection.Response response = Jsoup.connect(TPROGER_URL).followRedirects(false).execute();
+        System.out.println(response.statusCode());
+        Assert.assertEquals(response.statusCode(), 200);
     }
 }
