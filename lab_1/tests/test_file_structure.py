@@ -11,7 +11,7 @@ class StructureTests(unittest.TestCase):
         self.tittles = find_articles(self.page)
         publish_report("lab_1/tests/test_articles.json",  self.tittles)
 
-        with open("test_articles.json", "r", encoding="utf-8") as read_file:
+        with open("lab_1/tests/test_articles.json", "r", encoding="utf-8") as read_file:
             data = json.load(read_file)
 
         self.assertEqual("https://yandex.com/news/rubric/politics?from=index", data['url'])  # есть url
