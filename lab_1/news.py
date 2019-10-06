@@ -45,7 +45,8 @@ def get_news():
     url = "https://yandex.com/news/rubric/politics?from=index"
 
     html_page = get_html_page(url)
-    articles = find_articles(html_page)
+    parsed_page = parse_page(html_page)
+    articles = find_articles(parsed_page)
     publish_report("articles.json", articles)
 
     return render_template('news_page.html', url=url, date=today, articles=articles)

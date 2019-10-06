@@ -1,4 +1,4 @@
-import news
+from lab_1.news import get_html_page, parse_page, find_articles, publish_report
 import datetime
 import json
 import unittest
@@ -6,10 +6,10 @@ import unittest
 
 class StructureTests(unittest.TestCase):
     def test_file_structure(self):
-        self.request = news.get_html_page("https://yandex.com/news/rubric/politics?from=index")
-        self.page = news.parse_page(self.request)
-        self.tittles = news.find_articles(self.page)
-        news.publish_report("test_articles.json",  self.tittles)
+        self.request = get_html_page("https://yandex.com/news/rubric/politics?from=index")
+        self.page = parse_page(self.request)
+        self.tittles = find_articles(self.page)
+        publish_report("lab_1/tests/test_articles.json",  self.tittles)
 
         with open("test_articles.json", "r", encoding="utf-8") as read_file:
             data = json.load(read_file)

@@ -1,15 +1,15 @@
-import news
+from lab_1.news import app, find_articles
 import unittest
 from bs4 import BeautifulSoup
 
 
 class TittlesTests(unittest.TestCase):
     def setUp(self):
-        self.app = news.app.test_client()
+        self.app = app.test_client()
 
     def test_articles(self):
         response = self.app.get('/saved_news/', follow_redirects=True)
-        articles = news.find_articles(BeautifulSoup(response.data, 'html.parser'))
+        articles = find_articles(BeautifulSoup(response.data, 'html.parser'))
         self.assertEqual(articles, [{'tittle': 'США расширили санкции против РФ'},
                                     {'tittle': 'Администрацию Элисты возглавил бывший лидер ДНР'},
                                     {'tittle': 'В Кремле оценили инициативу Лукашенко ввести миротворцев в Донбасс'},

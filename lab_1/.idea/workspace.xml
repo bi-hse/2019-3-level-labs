@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6923375f-6dca-4f27-88a0-2662f056379a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles.json" beforeDir="false" afterPath="$PROJECT_DIR$/articles.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_file_structure.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_file_structure.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_tittles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_url.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/news.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -27,23 +30,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_tittles.py">
+        <entry file="file://$PROJECT_DIR$/tests/test_file_structure.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="279">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_file_structure.py">
+        <entry file="file://$PROJECT_DIR$/tests/test_tittles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state>
+              <caret selection-end-column="41" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_url.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,9 +84,12 @@
         <option value="$PROJECT_DIR$/tests/test_structure.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/get_news.py" />
-        <option value="$PROJECT_DIR$/tests/test_file_structure.py" />
-        <option value="$PROJECT_DIR$/news.py" />
         <option value="$PROJECT_DIR$/test_file_structure.py" />
+        <option value="$PROJECT_DIR$/test_tittles.py" />
+        <option value="$PROJECT_DIR$/news.py" />
+        <option value="$PROJECT_DIR$/tests/test_tittles.py" />
+        <option value="$PROJECT_DIR$/tests/test_url.py" />
+        <option value="$PROJECT_DIR$/tests/test_file_structure.py" />
       </list>
     </option>
   </component>
@@ -86,7 +105,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,10 +112,16 @@
               <item name="lab_1" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_1" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="lab_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_1" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -117,7 +141,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_file_structure.py (1)">
+  <component name="RunManager" selected="Python tests.Unittests in test_tittles.py (1)">
+    <configuration name="news" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="lab_1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/news.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests in test_file_structure.py (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="lab_1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -129,6 +174,34 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/test_file_structure.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_file_structure.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="lab_1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_file_structure.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_tittles.py (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="lab_1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_tittles.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -147,9 +220,27 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test_url.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="lab_1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_url.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in test_tittles.py (1)" />
+        <item itemvalue="Python tests.Unittests in test_file_structure.py" />
+        <item itemvalue="Python.news" />
         <item itemvalue="Python tests.Unittests in test_file_structure.py (1)" />
+        <item itemvalue="Python tests.Unittests in test_url.py" />
       </list>
     </recent_temporary>
   </component>
@@ -168,21 +259,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 21h 57m 09s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 21h 58m 25s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 21h 58m 34s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 22h 01m 00s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 22h 01m 34s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 22h 02m 29s.xml">
       <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
     </history-entry>
@@ -198,19 +274,35 @@
     <history-entry file="Unittests_in_test_file_structure_py_(1) - 2019.09.28 at 19h 27m 30s.xml">
       <configuration name="Unittests in test_file_structure.py (1)" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_tittles_py - 2019.10.06 at 19h 07m 37s.xml">
+      <configuration name="Unittests in test_tittles.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_url_py - 2019.10.06 at 19h 07m 46s.xml">
+      <configuration name="Unittests in test_url.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_file_structure_py_(1) - 2019.10.06 at 19h 08m 08s.xml">
+      <configuration name="Unittests in test_file_structure.py (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_file_structure_py - 2019.10.06 at 19h 55m 12s.xml">
+      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_tittles_py_(1) - 2019.10.06 at 19h 55m 20s.xml">
+      <configuration name="Unittests in test_tittles.py (1)" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="7000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32978722" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32978722" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32978722" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39893618" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -233,7 +325,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/tests/test_file_structure.py" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -242,19 +333,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/news.py">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="272">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_file_structure.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="357">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -264,9 +361,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_tittles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="119">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_tittles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="41" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_file_structure.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,6 @@
+requests
+bs4
+json
+datetime
+flask
+unittest
