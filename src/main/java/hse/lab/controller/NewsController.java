@@ -23,9 +23,4 @@ public class NewsController {
     public String getNews() {
         return former.createPage(newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
     }
-
-    @RequestMapping(value = "/pageTitle", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
-    public String getTitle() {
-        return newsParser.getHtmlPage(TPROGER_URL).title();
-    }
 }
