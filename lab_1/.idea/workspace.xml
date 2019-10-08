@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6923375f-6dca-4f27-88a0-2662f056379a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_file_structure.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_file_structure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_url.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_url.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,38 +165,6 @@
       <workItem from="1569687969230" duration="7000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 22h 02m 29s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 22h 08m 17s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.09.26 at 22h 08m 19s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_tittles_py - 2019.09.28 at 19h 27m 24s.xml">
-      <configuration name="Unittests in test_tittles.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py_(1) - 2019.09.28 at 19h 27m 30s.xml">
-      <configuration name="Unittests in test_file_structure.py (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_tittles_py - 2019.10.06 at 19h 07m 37s.xml">
-      <configuration name="Unittests in test_tittles.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_url_py - 2019.10.06 at 19h 07m 46s.xml">
-      <configuration name="Unittests in test_url.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py_(1) - 2019.10.06 at 19h 08m 08s.xml">
-      <configuration name="Unittests in test_file_structure.py (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_file_structure_py - 2019.10.06 at 19h 55m 12s.xml">
-      <configuration name="Unittests in test_file_structure.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_tittles_py_(1) - 2019.10.06 at 19h 55m 20s.xml">
-      <configuration name="Unittests in test_tittles.py (1)" configurationId="tests" />
-    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="7000" />

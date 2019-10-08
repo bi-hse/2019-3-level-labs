@@ -1,10 +1,10 @@
-from lab_1.news import get_html_page
+from lab_1.news import get_response
 import unittest
 
 
 class UrlTests(unittest.TestCase):
     def test_url(self):
-        request = get_html_page("https://yandex.com/news/rubric/politics?from=index")
+        request = get_response("https://yandex.com/news/rubric/politics?from=index")
         self.assertEqual(request.status_code, 200)
 
 
