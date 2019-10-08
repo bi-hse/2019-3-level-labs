@@ -6,11 +6,11 @@
 </head>
 <body>
     <h1>Новости о политике</h1>
-    <ul>
+    <ol>
         {% for article in articles %}
           <li>{{ article['tittle'] }}</li>
         {% endfor %}
-    </ul>
+    </ol>
     <p><b>Источник:</b> {{ url }}</p>
     <p><b>Дата:</b> {{ date }}</p>
 </body>

@@ -6,12 +6,12 @@ from flask import Flask
 from flask import render_template
 
 
-def get_html_page(url):
-    return requests.get(url)
+def get_response(url):
+    return requests.get(url)  # возвращаем запроc { "statusCode": int, "text": html-code, ... } (словарь)
 
 
 def parse_page(request):
-    return BeautifulSoup(request.text, 'html.parser')
+    return BeautifulSoup(request.text, 'html.parser')  # возвращаем отпарсированную страницу
 
 
 def find_articles(html_page):
@@ -44,8 +44,8 @@ def get_news():
     today = str(datetime.date.today())
     url = "https://yandex.com/news/rubric/politics?from=index"
 
-    html_page = get_html_page(url)
-    parsed_page = parse_page(html_page)
+    response = get_response(url)
+    parsed_page = parse_page(response)
     articles = find_articles(parsed_page)
     publish_report("articles.json", articles)
 
