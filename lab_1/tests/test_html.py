@@ -4,7 +4,7 @@ import datetime
 from bs4 import BeautifulSoup
 
 
-class TittleTest(unittest.TestCase):
+class HtmlTest(unittest.TestCase):
     def setUp(self):
         self.app = app.test_client()
 
