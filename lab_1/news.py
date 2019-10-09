@@ -7,7 +7,7 @@ from flask import render_template
 
 
 def get_response(url):
-    return requests.get(url)  # возвращаем запроc { "statusCode": int, "text": html-code, ... } (словарь)
+    return requests.get(url)  # возвращаем запроc { "statusCode": int, "text": html-code, ... }
 
 
 def parse_page(request):

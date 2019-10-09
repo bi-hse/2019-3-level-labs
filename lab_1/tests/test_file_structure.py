@@ -16,7 +16,7 @@ class StructureTests(unittest.TestCase):
 
         self.assertEqual("https://yandex.com/news/rubric/politics?from=index", data['url'])  # есть url
 
-        self.assertEqual(str(datetime.date.today()), data['creationDate'])  # есть url
+        self.assertEqual(str(datetime.date.today()), data['creationDate'])
 
         self.assertNotEqual("", data['articles'][0]['tittle'])  # есть хотя бы один заголовок
 
