@@ -24,11 +24,7 @@ public class PageFormer {
             div.html("<ol>");
             Element list = doc.select("ol").first();
             for (String m : headers) {
-                if (m != null && !m.trim().isEmpty()) {
-                    if (!(m.equals("По языкам") || m.equals("По брендам") || m.equals("По направлениям"))) {
                         list.append("<li>" + m + "</li>");
-                    }
-                }
             }
 
             Path newFile = Paths.get("src/main/resources/templates/new_page.html");

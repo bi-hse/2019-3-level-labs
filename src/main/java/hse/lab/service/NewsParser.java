@@ -26,7 +26,14 @@ public class NewsParser {
         Elements articles = page.select("h2");
         List<String> resultList = new ArrayList<>();
         for (Element h: articles) {
-            resultList.add(h.text());
+            String m = h.text();
+            if (m != null && !m.trim().isEmpty()) {
+                if (!(m.equals("По языкам") || m.equals("По брендам") || m.equals("По направлениям"))) {
+                    if (!m.toLowerCase().contains("подпишись") && !m.toLowerCase().contains("подпишитесь")) {
+                        resultList.add(m);
+                    }
+                }
+            }
         }
         return resultList;
     }

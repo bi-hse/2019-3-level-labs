@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class NewsController {
 
     private final String TPROGER_URL = "https://tproger.ru/";
+    private final String GAZETA_URL = "https://www.gazeta.ru/science/?updated";
+    private final String TOPWAR_URL = "https://topwar.ru/news/";
 
     @Autowired
     private NewsParser newsParser;
@@ -22,5 +24,15 @@ public class NewsController {
     @RequestMapping(value = "/news", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
     public String getNews() {
         return former.createPage(newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
+    }
+
+    @RequestMapping(value = "/science", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    public String getAnotherNews() {
+        return former.createPage(newsParser.findArticles(newsParser.getHtmlPage(GAZETA_URL)));
+    }
+
+    @RequestMapping(value = "/something", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    public String getOneMoreNews() {
+        return former.createPage(newsParser.findArticles(newsParser.getHtmlPage(TOPWAR_URL)));
     }
 }
