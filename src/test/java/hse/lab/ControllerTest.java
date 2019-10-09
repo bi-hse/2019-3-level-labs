@@ -1,7 +1,5 @@
 package hse.lab;
 
-import hse.lab.service.NewsParser;
-import hse.lab.service.PageFormer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +23,8 @@ public class ControllerTest {
     @Autowired
     private MockMvc mvc;
 
-    @Autowired
-    private NewsParser parser;
-
-    @Autowired
-    private PageFormer former;
-
     @Test
     public void urlIsAccessible() throws Exception {
-        former.createPage(parser.findArticles(parser.getHtmlPage(TPROGER_URL)));
         this.mvc.perform(get("/news"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML));
