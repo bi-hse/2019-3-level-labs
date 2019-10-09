@@ -10,12 +10,13 @@ class HtmlTest(unittest.TestCase):
 
     def test_tittles(self):
         request = get_response("https://yandex.com/news/rubric/politics?from=index")
-        self.assertEqual(request.status_code, 200)
         response = self.app.get('/', follow_redirects=True)
         html_page=(BeautifulSoup(response.data, 'html.parser'))
         articles = []
+		
         for title_tag in html_page.find_all('li'):
-            articles.append({"tittle": title_tag.text})
-        self.assertNotEqual(articles, ['articles'][0]['tittle'])
-    if __name__ == "__main__":
-        unittest.main()
+            articles.append(title_tag.text)
+        self.assertNotEqual(0, len(articles))
+	
+if __name__ == "__main__":
+    unittest.main()
