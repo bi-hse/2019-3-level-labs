@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class NewsController {
 
     private final String TPROGER_URL = "https://tproger.ru/";
+    private final String GAZETA_URL = "https://www.gazeta.ru/science/?updated";
+    private final String TOPWAR_URL = "https://topwar.ru/news/";
 
     @Autowired
     private NewsParser newsParser;
@@ -20,6 +22,20 @@ public class NewsController {
     public ModelAndView getNews() {
         ModelAndView modelAndView = new ModelAndView("Page");
         modelAndView.addObject("articles", newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/science", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    public ModelAndView getAnotherNews() {
+        ModelAndView modelAndView = new ModelAndView("Page");
+        modelAndView.addObject("articles", newsParser.findArticles(newsParser.getHtmlPage(GAZETA_URL)));
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/war", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    public ModelAndView getOneMoreNews() {
+        ModelAndView modelAndView = new ModelAndView("Page");
+        modelAndView.addObject("articles", newsParser.findArticles(newsParser.getHtmlPage(TOPWAR_URL)));
         return modelAndView;
     }
 }
