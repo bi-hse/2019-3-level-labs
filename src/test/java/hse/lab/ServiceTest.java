@@ -30,11 +30,12 @@ public class ServiceTest {
 
     @Test
     public void structureTest() throws JSONException {
-        String result = parser.publishReport(TPROGER_URL, parser.findArticles(parser.getHtmlPage(TPROGER_URL)));
+        String result = parser.publishReport(NewsParser.PATH, TPROGER_URL, parser.findArticles(parser.getHtmlPage(TPROGER_URL)));
         Result object = gson.fromJson(result, Result.class);
         Assert.assertNotNull(object);
         Assert.assertEquals(object.getUrl(), TPROGER_URL);
         Assert.assertNotNull(object.getArticles());
+        Assert.assertNotEquals(0, object.getArticles().size());
     }
 
     @Test
@@ -51,5 +52,6 @@ public class ServiceTest {
         List<String> articles = parser.findArticles(doc);
         Assert.assertNotNull(articles);
         System.out.println(articles.size());
+        Assert.assertNotEquals(0, articles.size());
     }
 }
