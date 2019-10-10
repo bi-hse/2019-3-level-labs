@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -37,5 +38,11 @@ public class NewsController {
         ModelAndView modelAndView = new ModelAndView("Page");
         modelAndView.addObject("articles", newsParser.findArticles(newsParser.getHtmlPage(TOPWAR_URL)));
         return modelAndView;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "getTprogerJson", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    public String getTprogerJson() {
+        return newsParser.publishReport(TPROGER_URL, newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
     }
 }
