@@ -28,9 +28,11 @@ public class NewsParser {
         for (Element h: articles) {
             String m = h.text();
             if (m != null && !m.trim().isEmpty()) {
-                if (!(m.equals("По языкам") || m.equals("По брендам") || m.equals("По направлениям"))) {
-                    if (!m.toLowerCase().contains("подпишись") && !m.toLowerCase().contains("подпишитесь")) {
-                        resultList.add(m);
+                if (!resultList.contains(m)) {
+                    if (!(m.equals("По языкам") || m.equals("По брендам") || m.equals("По направлениям"))) {
+                        if (!m.toLowerCase().contains("подпишись") && !m.toLowerCase().contains("подпишитесь")) {
+                            resultList.add(m);
+                        }
                     }
                 }
             }
@@ -42,7 +44,7 @@ public class NewsParser {
         try {
             return Jsoup.connect(url).get();
         } catch (IOException e) {
-            System.out.println("Could not get the tproger.ru page");
+            System.out.println("Could not get the page");
             System.out.println("Cause: " + e.getMessage());
             return null;
         }
