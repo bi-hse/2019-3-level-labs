@@ -1,9 +1,8 @@
 package hse.lab;
 
-import com.google.gson.Gson;
-import hse.lab.model.Result;
 import hse.lab.service.NewsParser;
 import org.json.JSONException;
+import org.json.simple.JSONObject;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -23,19 +22,17 @@ import java.util.List;
 public class ServiceTest {
 
     private final String TPROGER_URL = "https://tproger.ru/";
-    private final Gson gson = new Gson();
 
     @Autowired
     NewsParser parser;
 
     @Test
     public void structureTest() throws JSONException {
-        String result = parser.publishReport(NewsParser.PATH, TPROGER_URL, parser.findArticles(parser.getHtmlPage(TPROGER_URL)));
-        Result object = gson.fromJson(result, Result.class);
+        JSONObject object = parser.publishReport(NewsParser.PATH, TPROGER_URL, parser.findArticles(parser.getHtmlPage(TPROGER_URL)));
         Assert.assertNotNull(object);
-        Assert.assertEquals(object.getUrl(), TPROGER_URL);
-        Assert.assertNotNull(object.getArticles());
-        Assert.assertNotEquals(0, object.getArticles().size());
+        Assert.assertEquals(object.get("url"), TPROGER_URL);
+        Assert.assertNotNull(object.get("articles"));
+        Assert.assertNotEquals(object.get("articles"), 0);
     }
 
     @Test

@@ -44,6 +44,6 @@ public class NewsController {
     @RequestMapping(value = "getTprogerJson", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
     public String getTprogerJson() {
         return newsParser.publishReport(NewsParser.PATH, TPROGER_URL,
-                newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
+                newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL))).toJSONString();
     }
 }

@@ -1,7 +1,5 @@
 package hse.lab.service;
 
-import com.google.gson.Gson;
-import hse.lab.model.Result;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
@@ -12,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -22,20 +21,18 @@ import java.util.List;
 public class NewsParser {
     public static final String PATH = "src/main/resources/data/articles.json";
 
-    public String publishReport(String path, String url, List<String> articles) {
-        Result result = new Result(url, new Date(), articles);
-        Gson gson = new Gson();
-        String json = gson.toJson(result);
+    public JSONObject publishReport(String path, String url, List<String> articles) {
         JSONObject obj = new JSONObject();
-        obj.put("url", result.getUrl());
-        obj.put("creationDate", result.getCreationDate());
-
+        obj.put("url", url);
+        obj.put("creationDate", new Date().toString());
         JSONArray jsonArticles = new JSONArray();
         jsonArticles.addAll(articles);
         obj.put("articles", jsonArticles);
 
         try {
             Files.createFile(Paths.get(path));
+        } catch (FileAlreadyExistsException ignore) {
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,7 +45,7 @@ public class NewsParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return json;
+        return obj;
     }
 
     public List<String> findArticles(Document page) {
