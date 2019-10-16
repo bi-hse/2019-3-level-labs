@@ -8,6 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
@@ -30,6 +31,10 @@ public class NewsParser {
         obj.put("articles", jsonArticles);
 
         try {
+            File directory = new File("src/main/resources/data/");
+            if (!directory.exists()){
+                directory.mkdir();
+            }
             Files.createFile(Paths.get(path));
         } catch (FileAlreadyExistsException ignore) {
 

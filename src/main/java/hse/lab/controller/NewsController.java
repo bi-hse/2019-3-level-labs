@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class NewsController {
 
@@ -22,21 +24,27 @@ public class NewsController {
     @RequestMapping(value = "/news", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
     public ModelAndView getNews() {
         ModelAndView modelAndView = new ModelAndView("Page");
-        modelAndView.addObject("articles", newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL)));
+        List<String> articles = newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL));
+        newsParser.publishReport(NewsParser.PATH, TPROGER_URL, articles);
+        modelAndView.addObject("articles", articles);
         return modelAndView;
     }
 
     @RequestMapping(value = "/science", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
     public ModelAndView getAnotherNews() {
         ModelAndView modelAndView = new ModelAndView("Page");
-        modelAndView.addObject("articles", newsParser.findArticles(newsParser.getHtmlPage(GAZETA_URL)));
+        List<String> articles = newsParser.findArticles(newsParser.getHtmlPage(GAZETA_URL));
+        newsParser.publishReport(NewsParser.PATH, TPROGER_URL, articles);
+        modelAndView.addObject("articles", articles);
         return modelAndView;
     }
 
     @RequestMapping(value = "/war", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
     public ModelAndView getOneMoreNews() {
         ModelAndView modelAndView = new ModelAndView("Page");
-        modelAndView.addObject("articles", newsParser.findArticles(newsParser.getHtmlPage(TOPWAR_URL)));
+        List<String> articles = newsParser.findArticles(newsParser.getHtmlPage(TOPWAR_URL));
+        newsParser.publishReport(NewsParser.PATH, TPROGER_URL, articles);
+        modelAndView.addObject("articles", articles);
         return modelAndView;
     }
 
