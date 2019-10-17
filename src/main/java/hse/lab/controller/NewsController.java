@@ -4,11 +4,13 @@ import hse.lab.service.NewsParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -53,5 +55,17 @@ public class NewsController {
     public String getTprogerJson() {
         return newsParser.publishReport(NewsParser.PATH, TPROGER_URL,
                 newsParser.findArticles(newsParser.getHtmlPage(TPROGER_URL))).toJSONString();
+    }
+
+    @GetMapping
+    public ModelAndView defaultPage() {
+        ModelAndView modelAndView = new ModelAndView("PageNotFound");
+        return modelAndView;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/task1", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    public String task1Page() {
+        return new Date().toString();
     }
 }
